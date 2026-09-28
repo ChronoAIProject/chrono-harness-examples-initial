@@ -1,6 +1,6 @@
 # chrono-harness initial-host example
 
-A documentation-only host demonstrating the generated first-root inventory profile and subsequent DELTA checks with public chrono-harness v0.1.0-beta.7. There are no production or test projects. All tracked files are explicitly registered; no project structure or language is inferred.
+A documentation-only host demonstrating the generated first-root inventory profile and subsequent DELTA checks with public chrono-harness v0.1.0-beta.8. There are no production or test projects. All tracked files are explicitly registered; no project structure or language is inferred.
 
 Install the pinned public release with `python3 .chrono-harness/install.py .`.
 For the parentless root commit, run `.chrono-harness/bin/chrono-harness check --config .chrono-harness/ci/initial.json --candidate ROOT_OID --initial`.
@@ -27,14 +27,14 @@ registrations have one owner; directory names and languages do not select work.
 The destination must not exist. `reconstruct` uses the same arguments plus
 `--plan .chrono-harness/state/reconstruction.json`, with explicit fixed base and
 candidate OIDs and a complete carry/retire path list. See the
-[worktree contract](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.7/docs/worktree.md).
+[worktree contract](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.8/docs/worktree.md).
 Creation/reconstruction records actual Git results and preserves old work;
 reconstruction stages changes and requires a new commit and the canonical check.
 PR creation and merge remain caller-owned. Shared full-governance
 registries are proposed; worktree use does not activate them or establish full
 input closure, freshness certification or deterministic local/CI parity.
 
-The historical parentless root keeps its own beta.5 lock and initial profile; reproduce it from that checkout. This beta.7 adoption uses ordinary DELTA checks and does not claim a new first-root inventory.
+The historical parentless root keeps its own beta.5 lock and initial profile; reproduce it from that checkout. This beta.8 adoption uses ordinary DELTA checks and does not claim a new first-root inventory.
 
 ## Registered maintenance
 
@@ -53,6 +53,26 @@ requires an explicit retained branch/commit and selected disposable artifacts.
 Fetch-ref cleanup requires its original failed receipt and a fixed local branch
 preserving the expected commit. Reports retain failures and distinguish verified
 removal from unverified partial effects. See the pinned
-[maintenance contract](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.7/docs/worktree.md#registered-recovery-and-cleanup)
-for complete plan formats. Missing/interrupted receipts, damaged Git metadata,
+[maintenance contract](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.8/docs/worktree.md#registered-recovery-and-cleanup)
+for complete plan formats. Lost recovery identity, damaged Git metadata,
 remote branch retirement and PR/merge orchestration remain separate obligations.
+
+
+## Interrupted operations
+
+The installed tool writes separate immutable intents before checkout/lock effects
+and before fetching. After establishing that the original process stopped, supply
+an explicit intent digest and original-result presence/digest to:
+
+```sh
+.chrono-harness/bin/chrono-worktree recover-interrupted --host-root . --config .chrono-harness/worktree.json --plan .chrono-harness/state/interrupted-checkout.json
+.chrono-harness/bin/chrono-worktree cleanup-fetch-interrupted --host-root . --config .chrono-harness/worktree.json --plan .chrono-harness/state/interrupted-fetch.json
+```
+
+Checkout recovery also requires the reconciled HEAD/index tree. Fetch cleanup
+requires the expected current OID and a local branch retaining it; an already
+absent ref needs an explicit retry plan. Both preserve the original bytes and
+keep the original outcome unknown; terminal reports use ordinary maintenance.
+See the pinned [interruption contracts](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.8/docs/worktree.md#interrupted-checkout-recovery).
+These commands do not reconstruct a lost index, make concurrent writers atomic,
+or certify full governance or deterministic parity.
