@@ -1,6 +1,6 @@
 # chrono-harness initial-host example
 
-A documentation-only host demonstrating the generated first-root inventory profile and subsequent DELTA checks with public chrono-harness v0.1.0-beta.6. There are no production or test projects. All tracked files are explicitly registered; no project structure or language is inferred.
+A documentation-only host demonstrating the generated first-root inventory profile and subsequent DELTA checks with public chrono-harness v0.1.0-beta.7. There are no production or test projects. All tracked files are explicitly registered; no project structure or language is inferred.
 
 Install the pinned public release with `python3 .chrono-harness/install.py .`.
 For the parentless root commit, run `.chrono-harness/bin/chrono-harness check --config .chrono-harness/ci/initial.json --candidate ROOT_OID --initial`.
@@ -27,11 +27,32 @@ registrations have one owner; directory names and languages do not select work.
 The destination must not exist. `reconstruct` uses the same arguments plus
 `--plan .chrono-harness/state/reconstruction.json`, with explicit fixed base and
 candidate OIDs and a complete carry/retire path list. See the
-[worktree contract](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.6/docs/worktree.md).
+[worktree contract](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.7/docs/worktree.md).
 Creation/reconstruction records actual Git results and preserves old work;
 reconstruction stages changes and requires a new commit and the canonical check.
-PR creation, merge and cleanup remain caller-owned. Shared full-governance
+PR creation and merge remain caller-owned. Shared full-governance
 registries are proposed; worktree use does not activate them or establish full
 input closure, freshness certification or deterministic local/CI parity.
 
-The historical parentless root keeps its own beta.5 lock and initial profile; reproduce it from that checkout. This beta.6 adoption uses ordinary DELTA checks and does not claim a new first-root inventory.
+The historical parentless root keeps its own beta.5 lock and initial profile; reproduce it from that checkout. This beta.7 adoption uses ordinary DELTA checks and does not claim a new first-root inventory.
+
+## Registered maintenance
+
+The same installed `chrono-worktree` consumes explicit maintenance plans under
+`.chrono-harness/state/` with the registered `.chrono-harness/worktree.json`:
+
+```sh
+.chrono-harness/bin/chrono-worktree recover --host-root . --config .chrono-harness/worktree.json --plan .chrono-harness/state/recover.json
+.chrono-harness/bin/chrono-worktree cleanup --host-root . --config .chrono-harness/worktree.json --plan .chrono-harness/state/cleanup.json
+.chrono-harness/bin/chrono-worktree cleanup-fetch --host-root . --config .chrono-harness/worktree.json --plan .chrono-harness/state/cleanup-fetch.json
+```
+
+Recovery validates the original failure, reconciled HEAD/index and owned lock;
+staged changes still need a candidate commit and the canonical check. Cleanup
+requires an explicit retained branch/commit and selected disposable artifacts.
+Fetch-ref cleanup requires its original failed receipt and a fixed local branch
+preserving the expected commit. Reports retain failures and distinguish verified
+removal from unverified partial effects. See the pinned
+[maintenance contract](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.7/docs/worktree.md#registered-recovery-and-cleanup)
+for complete plan formats. Missing/interrupted receipts, damaged Git metadata,
+remote branch retirement and PR/merge orchestration remain separate obligations.
