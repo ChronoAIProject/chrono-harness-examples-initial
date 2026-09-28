@@ -6,7 +6,7 @@
       "id": "initial-registration",
       "executable": ".chrono-harness/bin/chrono-judge-registration",
       "version": "0.1.0",
-      "sha256": "a3e5512d927a41229019ff1a5733a6a051ddcf7de9f592ee588094e0e8b6ac7c",
+      "sha256": "f74d712a9278b86f5652abef56dabc9c5179baafe41e40e4408c94b230e94da1",
       "argv": [
         "--protocol",
         "chrono-initial-judge/v1"
