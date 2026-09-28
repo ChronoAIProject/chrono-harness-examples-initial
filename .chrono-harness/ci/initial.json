@@ -1,0 +1,23 @@
+{
+  "schema": "chrono-initial-check/v1",
+  "host_config": ".chrono-harness/config.json",
+  "judges": [
+    {
+      "id": "initial-registration",
+      "executable": ".chrono-harness/bin/chrono-judge-registration",
+      "version": "0.1.0",
+      "sha256": "0820253cc525570396bab6d8200a91d3b1db944d1a9ac273c54c1b03960b23df",
+      "argv": [
+        "--protocol",
+        "chrono-initial-judge/v1"
+      ],
+      "selector": "every-initial",
+      "after": [],
+      "modes": [
+        "inventory"
+      ]
+    }
+  ],
+  "timeout_seconds": 120,
+  "stdout_limit_bytes": 1048576
+}

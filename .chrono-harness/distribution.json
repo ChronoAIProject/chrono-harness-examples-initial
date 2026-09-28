@@ -1,0 +1,33 @@
+{
+  "schema": "chrono-install/v1",
+  "version": "v0.1.0-beta.5",
+  "source": {
+    "kind": "https",
+    "base_url": "https://github.com/ChronoAIProject/chrono-harness/releases/download/v0.1.0-beta.5",
+    "curl": "/usr/bin/curl"
+  },
+  "manifest": {
+    "file": "release.json",
+    "sha256": "6bc7a5f58fffb8d62cfb95dc6b0013e8a250a905ba78ffe57b3669005165f1b1",
+    "size": 5859
+  },
+  "installers": {
+    "linux-x86_64": {
+      "file": "chrono-distribution-linux-x86_64",
+      "sha256": "db4ed8c5eac49906bc9f0a459e8aeffed861ca9ef6e1180f27578006a9c95585",
+      "size": 927424
+    },
+    "macos-aarch64": {
+      "file": "chrono-distribution-macos-aarch64",
+      "sha256": "9bb6b38ef9115dd09aceed84ea7f33d6d8ad3b22d362cf7de414cbc0def3c3a1",
+      "size": 786176
+    }
+  },
+  "install": {
+    "chrono-ci": ".chrono-harness/bin/chrono-ci",
+    "chrono-harness": ".chrono-harness/bin/chrono-harness",
+    "chrono-instructions": ".chrono-harness/bin/chrono-instructions",
+    "chrono-judge-ci": ".chrono-harness/bin/chrono-judge-ci",
+    "chrono-judge-registration": ".chrono-harness/bin/chrono-judge-registration"
+  }
+}
