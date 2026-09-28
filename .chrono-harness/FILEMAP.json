@@ -137,6 +137,13 @@
       "surface": "documentation",
       "cost": "unmeasured",
       "edges": []
+    },
+    {
+      "path": ".chrono-harness/worktree.json",
+      "owner": "repository",
+      "surface": "judge-policy",
+      "cost": "unmeasured",
+      "edges": []
     }
   ],
   "project_edges": [],
