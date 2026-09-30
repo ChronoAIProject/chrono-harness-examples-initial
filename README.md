@@ -1,6 +1,6 @@
 # chrono-harness initial-host example
 
-A documentation-only host demonstrating the generated first-root inventory profile and subsequent DELTA checks with public chrono-harness v0.1.0-beta.14. There are no production or test projects. All tracked files are explicitly registered; no project structure or language is inferred.
+A documentation-only host demonstrating a historical first-root inventory and subsequent DELTA checks. Ordinary updates use public chrono-harness v0.1.0-beta.19. There are no production or test projects. All tracked files are explicitly registered; no project structure or language is inferred.
 
 Install the pinned public release with `python3 .chrono-harness/install.py .`.
 For the parentless root commit, run `.chrono-harness/bin/chrono-harness check --config .chrono-harness/ci/initial.json --candidate ROOT_OID --initial`.
@@ -34,7 +34,7 @@ PR creation and merge remain caller-owned. Shared full-governance
 registries are proposed; worktree use does not activate them or establish full
 input closure, freshness certification or deterministic local/CI parity.
 
-The historical parentless root keeps its own beta.5 lock and initial profile; reproduce it from that checkout. This beta.14 adoption uses ordinary DELTA checks and does not claim a new first-root inventory.
+The historical parentless root keeps its own beta.5 lock and initial profile; reproduce it from that checkout. This beta.19 adoption uses ordinary DELTA checks and does not claim a new first-root inventory.
 
 ## Registered maintenance
 
@@ -81,7 +81,7 @@ The pinned release also provides optional explicitly bound Git readers. This hos
 
 ## CI projections and remote retirement
 
-The pinned beta.14 binaries also provide explicit release-workflow generation and full-context CI transport. This host retains its registered scoped profile; installing binaries does not activate full governance. See the pinned [release CI](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.14/docs/release-ci.md) and [full context CI](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.14/docs/full-ci.md) contracts.
+The pinned beta.19 binaries also provide explicit release-workflow generation and full-context CI transport. This host retains its registered scoped profile; installing binaries does not activate full governance. See the pinned [release CI](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.14/docs/release-ci.md) and [full context CI](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.14/docs/full-ci.md) contracts.
 
 `chrono-worktree cleanup-remote` consumes an explicit state plan with the expected remote URL, work-branch OID and retained target commit. It performs exact leased deletion, verifies absence and preserves original failures; this is not an atomic remote transaction or a PR/merge verdict. See [remote retirement](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.14/docs/worktree.md#remote-branch-retirement).
 
