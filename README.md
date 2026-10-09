@@ -24,7 +24,10 @@ This is a candidate configuration/projection awaiting compatible public delivery
 `distribution.json` still pins the real public beta.20; `python3 .chrono-harness/install.py .`
 installs that release, which does not implement this new initial bare-entry contract.
 Candidate verification explicitly binds copied source-built tools; those binaries
-are untracked and are not released assets. Public installation and real native
+are untracked and are not released assets. The initial/normal registration judge
+digest names that candidate executable; prior public provider/profile/tool bytes
+remain retained under `.chrono-harness/state/e2-adoption/` for release adoption.
+Public installation and real native
 push/PR/first-commit verification remain caller-owned.
 
 This example explicitly supports macOS arm64 and `macos-14`. The initial judge digest is pinned for that platform. Initial inventory completion does not activate full governance, prove input closure, or establish deterministic local/CI parity. The full registries remain proposed. A normal documentation DELTA requires no business tests.
