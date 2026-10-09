@@ -1,6 +1,6 @@
 # chrono-harness initial-host example
 
-A documentation-only host demonstrating a historical first-root inventory and subsequent DELTA checks. Ordinary updates use public chrono-harness v0.1.0-beta.20. There are no production or test projects. All tracked files are explicitly registered; no project structure or language is inferred.
+A documentation-only host demonstrating a historical first-root inventory and subsequent DELTA checks. The distribution lock remains public chrono-harness v0.1.0-beta.20 while this checkout prepares compatible candidate adoption. There are no production or test projects. All tracked files are explicitly registered; no project structure or language is inferred.
 
 The registered local and generated CI check entry is:
 
