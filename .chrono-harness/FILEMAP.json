@@ -144,6 +144,13 @@
       "surface": "judge-policy",
       "cost": "unmeasured",
       "edges": []
+    },
+    {
+      "path": ".chrono-harness/git/macos.json",
+      "owner": "repository",
+      "surface": "judge-policy",
+      "cost": "unmeasured",
+      "edges": []
     }
   ],
   "project_edges": [],

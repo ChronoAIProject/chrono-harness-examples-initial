@@ -1,5 +1,5 @@
 {
-  "schema": "chrono-github-ci/v2",
+  "schema": "chrono-github-ci/v4",
   "workflow_path": ".github/workflows/chrono-ci.yml",
   "name": "chrono-harness",
   "runs_on": "macos-14",
@@ -55,5 +55,7 @@
         }
       ]
     }
-  }
+  },
+  "facts_config": ".chrono-harness/config.json",
+  "include_hidden_files": true
 }
