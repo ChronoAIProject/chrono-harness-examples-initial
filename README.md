@@ -1,17 +1,40 @@
 # chrono-harness initial-host example
 
-A documentation-only host demonstrating a historical first-root inventory and subsequent DELTA checks. Ordinary updates use public chrono-harness v0.1.0-beta.20. There are no production or test projects. All tracked files are explicitly registered; no project structure or language is inferred.
+A documentation-only host demonstrating a historical first-root inventory and subsequent DELTA checks. The distribution lock remains public chrono-harness v0.1.0-beta.20 while this checkout prepares compatible candidate adoption. There are no production or test projects. All tracked files are explicitly registered; no project structure or language is inferred.
 
-Install the pinned public release with `python3 .chrono-harness/install.py .`.
-From the historical root checkout with its own pinned installer, run `.chrono-harness/bin/chrono-harness check --config .chrono-harness/ci/initial.json --candidate ROOT_OID --initial`.
-For subsequent revisions, run `.chrono-harness/bin/chrono-harness check --config .chrono-harness/ci/check.json --base BASE_OID --candidate CANDIDATE_OID`.
-The generated workflow invokes the same commands. Regenerate it with `.chrono-harness/bin/chrono-ci generate --host-root . --config .chrono-harness/ci/github.json`.
+The registered local and generated CI check entry is:
+
+```sh
+.chrono-harness/bin/chrono-harness check
+```
+
+The candidate schema4 binding selects the standalone explicit initial inventory
+for a genuine parentless candidate and ordinary DELTA for a nonroot. Local DELTA
+freezes clean committed HEAD and the registered `origin` target `dev`; native CI
+uses the existing event producer. Physical commit headers distinguish true roots
+from shallow boundaries. Projects, scripts, execution plans and business units
+remain empty, so unit/collection modes are not adopted.
+
+Regenerate the owned projection with `.chrono-harness/bin/chrono-ci generate --host-root . --config .chrono-harness/ci/github.json` and verify with its registered
+`verify` operation. Changing an existing projection uses the CI owner's explicit
+migration with the retained prior provider and original source address; the
+standalone transition preserves the exact initial inventory declaration.
+
+This is a candidate configuration/projection awaiting compatible public delivery.
+`distribution.json` still pins the real public beta.20; `python3 .chrono-harness/install.py .`
+installs that release, which does not implement this new initial bare-entry contract.
+Candidate verification explicitly binds copied source-built tools; those binaries
+are untracked and are not released assets. The initial/normal registration judge
+digest names that candidate executable; prior public provider/profile/tool bytes
+remain retained under `.chrono-harness/state/e2-adoption/` for release adoption.
+Public installation and real native
+push/PR/first-commit verification remain caller-owned.
 
 This example explicitly supports macOS arm64 and `macos-14`. The initial judge digest is pinned for that platform. Initial inventory completion does not activate full governance, prove input closure, or establish deterministic local/CI parity. The full registries remain proposed. A normal documentation DELTA requires no business tests.
 
 Core agent methods are generated into `CLAUDE.md`; `AGENTS.md` is its relative symbolic link. Edit the registered instruction catalog or manifest and run `.chrono-harness/bin/chrono-instructions generate --host-root .`.
 
-The first published root is `4ee7954241eb3c4a40e6cff2c8d2d67beb390a9a`. Later documentation changes use the ordinary DELTA profile with explicit base and candidate commits; the initial inventory is reserved for the parentless root.
+The first published root is `4ee7954241eb3c4a40e6cff2c8d2d67beb390a9a`. Later documentation changes use the ordinary DELTA profile through the bare entry; the initial inventory remains reserved for a genuine parentless candidate. The immutable historical root retains its original beta.5 entry and lock.
 
 ## Registered worktrees
 
@@ -27,8 +50,8 @@ manifest paths are `.chrono-harness/state/local/context.json` and
 `.chrono-harness/state/collection/manifest.json`. The source and fetched target
 `dev` must carry the same committed policy before creating a lane. Existing lanes
 without an origin receipt need reconstruction from an adopted source; no origin
-evidence is synthesized. This registration does not activate full short-command
-checks; the explicit ordinary and initial commands above remain the host entries.
+evidence is synthesized. The scoped bare check does not require a full origin
+context and does not activate full governance.
 
 ```sh
 .chrono-harness/bin/chrono-worktree start --host-root . --config .chrono-harness/worktree.json --kind feature --name change --path ../my-change
@@ -87,7 +110,7 @@ See the pinned [interruption contracts](https://github.com/ChronoAIProject/chron
 These commands do not reconstruct a lost index, make concurrent writers atomic,
 or certify full governance or deterministic parity.
 
-The pinned release also provides optional explicitly bound Git readers. This host keeps its registered scoped profile; adopting new binaries does not implicitly change the Git-binding or governance policy. See the pinned [Git facts contract](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.20/docs/git-facts.md).
+The candidate explicitly binds macOS arm64 Git through `.chrono-harness/config.json` and `.chrono-harness/git/macos.json`, including executable bytes/version and environment. Unknown platforms fail; the existing Linux distribution entry does not establish a supported initial-host Git or initial-judge policy. Complete Git/configuration/toolchain closure and deterministic parity remain unestablished. Adopting new binaries does not implicitly change governance policy. See the pinned [Git facts contract](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.0-beta.20/docs/git-facts.md).
 
 ## CI projections and remote retirement
 
