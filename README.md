@@ -13,7 +13,7 @@ sh .chrono-harness/install.sh --host-root .
 .chrono-harness/bin/chrono-harness check
 ```
 
-需要 Git、POSIX Shell、curl 和该发布登记的摘要工具。当前 CI 平台仍为 macOS arm64／`macos-14`；公开发行包也提供 Linux，安装器存在不代表此示例已完成 Linux 的业务检查。
+需要 Git、POSIX Shell、curl 和该发布登记的摘要工具。当前 CI 平台仍为 macOS arm64／`macos-26`；公开发行包也提供 Linux，安装器存在不代表此示例已完成 Linux 的业务检查。
 
 候选须已提交且检出干净。schema 4 的 `canonical_check` 明确选择本地工作树输入程序和 CI 事件输入程序，二者使用相同短命令。PR 检查固定合并提交，以第一父为基线并核第二父是事件 head；dev push 使用实际 before／after。Git 由本轮观察并绑定，不声称本地与 CI 的环境完全相同。
 
