@@ -48,7 +48,7 @@
       "edges": []
     },
     {
-      "path": ".chrono-harness/install.py",
+      "path": ".chrono-harness/install.sh",
       "owner": "repository",
       "surface": "judge-policy",
       "cost": "unmeasured",
