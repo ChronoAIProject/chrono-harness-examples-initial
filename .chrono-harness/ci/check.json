@@ -1,5 +1,5 @@
 {
-  "schema": "chrono-ci-check/v1",
+  "schema": "chrono-ci-check/v2",
   "judge": {
     "program": ".chrono-harness/bin/chrono-judge-ci",
     "args": [],
@@ -22,7 +22,7 @@
       ".chrono-harness/ci/initial.json",
       ".github/workflows/chrono-ci.yml",
       ".chrono-harness/distribution.json",
-      ".chrono-harness/install.py",
+      ".chrono-harness/install.sh",
       ".chrono-harness/config.json",
       ".chrono-harness/judges.json",
       ".chrono-harness/workflow.json",
@@ -31,6 +31,8 @@
     "adoption_base": null,
     "operation_timeout_seconds": 120,
     "operation_output_limit_bytes": 1048576,
-    "environment": {}
+    "environment": {},
+    "facts_config": ".chrono-harness/config.json",
+    "registration_config": ".chrono-harness/config.json"
   }
 }
