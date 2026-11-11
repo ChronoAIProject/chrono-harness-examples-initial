@@ -29,7 +29,7 @@ sh .chrono-harness/install.sh --host-root .
 
 保留现有英语指南选择；`AGENTS.md` 是目标字面值为 `CLAUDE.md` 的相对符号链接，不手改生成块，也不因安装新二进制覆盖宿主定制。
 
-CI 来源为 `.chrono-harness/ci/github.json`，采用 `chrono-github-ci/v4`，保留独立的 `chrono-initial-check/v1` 初始合同：
+CI 来源为 `.chrono-harness/ci/github.json`，采用 `chrono-github-ci/v4`；普通检查使用绑定 Git 的 `chrono-ci-check/v2`，保留独立的 `chrono-initial-check/v1` 初始合同：
 
 ```sh
 .chrono-harness/bin/chrono-ci generate --host-root . --config .chrono-harness/ci/github.json

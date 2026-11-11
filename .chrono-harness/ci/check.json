@@ -1,5 +1,5 @@
 {
-  "schema": "chrono-ci-check/v1",
+  "schema": "chrono-ci-check/v2",
   "judge": {
     "program": ".chrono-harness/bin/chrono-judge-ci",
     "args": [],
