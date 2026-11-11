@@ -1,11 +1,11 @@
 {
-  "schema_version": 1,
+  "schema_version": 4,
   "status": "proposed",
   "enforcement": "not-implemented",
   "runner": {
     "path": ".chrono-harness/bin/chrono-harness",
     "version": "0.1.0",
-    "sha256": "b3933b773ed4a03a5d79d9fa0dd4e9de9b35f8ce13d8864fdf021d489aa2526c"
+    "sha256": "e84f67bc75892b286e5aba8def12b3f6c6c54b85f803991b157c8b602c623028"
   },
   "registries": {
     "judges": ".chrono-harness/judges.json",
@@ -17,16 +17,68 @@
     "operation": "validate.delta",
     "argv": [
       ".chrono-harness/bin/chrono-harness",
-      "check",
-      "--config",
-      ".chrono-harness/ci/check.json",
-      "--base",
-      "{base}",
-      "--candidate",
-      "{candidate}"
-    ]
+      "check"
+    ],
+    "profile": ".chrono-harness/ci/check.json",
+    "initial_profile": ".chrono-harness/ci/initial.json",
+    "inputs": {
+      "local": {
+        "operation": "prepare.check.local",
+        "tool": "chrono-worktree",
+        "argv": [
+          "check-inputs",
+          "--config",
+          ".chrono-harness/worktree.json"
+        ]
+      },
+      "ci": {
+        "operation": "prepare.check.ci",
+        "tool": "chrono-ci",
+        "argv": [
+          "check-inputs",
+          "--config",
+          ".chrono-harness/ci/github.json",
+          "--event-env",
+          "GITHUB_EVENT_NAME",
+          "--payload-env",
+          "GITHUB_EVENT_PATH",
+          "--revision-env",
+          "CHRONO_WORKFLOW_REVISION",
+          "--repository-env",
+          "GITHUB_REPOSITORY"
+        ]
+      }
+    }
   },
-  "tools": [],
+  "tools": [
+    {
+      "id": "git",
+      "program": "/usr/bin/git",
+      "resolution": "PATH-once",
+      "version_argv": [
+        "--version"
+      ],
+      "expected_version": null
+    },
+    {
+      "id": "chrono-ci",
+      "program": ".chrono-harness/bin/chrono-ci",
+      "resolution": "PATH-once",
+      "version_argv": [
+        "--version"
+      ],
+      "expected_version": null
+    },
+    {
+      "id": "chrono-worktree",
+      "program": ".chrono-harness/bin/chrono-worktree",
+      "resolution": "PATH-once",
+      "version_argv": [
+        "--version"
+      ],
+      "expected_version": null
+    }
+  ],
   "protocol": {
     "id": "chrono-judge/v1",
     "timeout_seconds": 120,
@@ -56,15 +108,31 @@
   ],
   "environment": {
     "inherit": [
-      "PATH"
+      "PATH",
+      "HOME",
+      "TMPDIR",
+      "CHRONO_CHECK_SOURCE",
+      "GITHUB_EVENT_NAME",
+      "GITHUB_EVENT_PATH",
+      "CHRONO_WORKFLOW_REVISION",
+      "GITHUB_REPOSITORY",
+      "GITHUB_RUN_ID",
+      "GITHUB_RUN_ATTEMPT",
+      "GH_TOKEN"
     ],
     "values": {},
-    "inputs": []
+    "inputs": [],
+    "credential_environment": [
+      "GH_TOKEN"
+    ]
   },
   "input_closure": {
     "status": "incomplete",
     "unresolved": [
       "Bootstrap provenance, complete effective inputs and governance activation are not certified."
     ]
+  },
+  "facts_git": {
+    "tool": "git"
   }
 }

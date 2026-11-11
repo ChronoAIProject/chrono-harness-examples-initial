@@ -1,22 +1,23 @@
 {
-  "schema": "chrono-github-ci/v2",
+  "schema": "chrono-github-ci/v4",
   "workflow_path": ".github/workflows/chrono-ci.yml",
   "name": "chrono-harness",
-  "runs_on": "macos-14",
+  "runs_on": "macos-26",
   "push_branches": [
-    "dev",
-    "integration/**"
+    "dev"
   ],
   "pull_request_branches": [
-    "dev"
+    "dev",
+    "integration/**"
   ],
   "branch_creation_base_ref": "refs/heads/dev",
   "checkout_action": "actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
   "upload_artifact_action": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
   "timeout_minutes": 45,
   "bootstrap": [
-    "/usr/bin/python3",
-    ".chrono-harness/install.py",
+    "/bin/sh",
+    ".chrono-harness/install.sh",
+    "--host-root",
     "."
   ],
   "runner": ".chrono-harness/bin/chrono-harness",
@@ -24,12 +25,6 @@
   "check_config": ".chrono-harness/ci/check.json",
   "context_path": ".chrono-harness/state/context.json",
   "artifact_directory": ".chrono-harness/state/",
-  "push_baselines": [
-    {
-      "ref_prefix": "refs/heads/integration/",
-      "base_ref": "refs/heads/dev"
-    }
-  ],
   "initial_inventory": {
     "path": ".chrono-harness/ci/initial.json",
     "profile": {
@@ -41,7 +36,7 @@
         {
           "id": "initial-registration",
           "executable": ".chrono-harness/bin/chrono-judge-registration",
-          "sha256": "bb2cef0a19a6772a7e555234ee89de2947f12205de60ee8b1e5ee8071c710de0",
+          "sha256": "0748bb868f899ead286f036c388863ffc8d400f84300c94f2a498e6dd138f182",
           "argv": [
             "--protocol",
             "chrono-initial-judge/v1"
@@ -55,5 +50,7 @@
         }
       ]
     }
-  }
+  },
+  "facts_config": ".chrono-harness/config.json",
+  "include_hidden_files": true
 }
