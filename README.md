@@ -36,7 +36,7 @@ CI 来源为 `.chrono-harness/ci/github.json`，采用 `chrono-github-ci/v4`；�
 .chrono-harness/bin/chrono-ci verify --host-root . --config .chrono-harness/ci/github.json
 ```
 
-规则、CI 或稳定性迁移先经过 feature → integration 的真实 PR，再进入 dev；PR 就绪后启用已有原生自动合并，按实际保护与检查核验，不增加确认关卡。CI 成功、PR 合并、dev 落地和新版实际采用分别核对。
+规则、CI 或稳定性迁移先经过 feature → integration 的真实 PR，再进入 dev；本仓未启用原生自动合并，现有 GitHub App 无权修改该设置；AI 等适用 CI 全部通过后，用现有合并入口匹配当前 head，按原有保护交付，不申请额外权限或增加确认关卡。CI 成功、PR 合并、dev 落地和新版实际采用分别核对。
 
 ## 工作树和恢复
 
