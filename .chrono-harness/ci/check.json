@@ -32,6 +32,7 @@
     "operation_timeout_seconds": 120,
     "operation_output_limit_bytes": 1048576,
     "environment": {},
-    "facts_config": ".chrono-harness/config.json"
+    "facts_config": ".chrono-harness/config.json",
+    "registration_config": ".chrono-harness/config.json"
   }
 }
