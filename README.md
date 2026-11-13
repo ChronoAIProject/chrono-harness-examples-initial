@@ -4,7 +4,7 @@
 
 ## 安装和检查
 
-本轮采用固定测试版 [v0.1.4-dev.43368268229.1.geb40976ebd99b7844420fcf49c95c4ee3ab234ca](https://github.com/ChronoAIProject/chrono-harness/releases/tag/v0.1.4-dev.43368268229.1.geb40976ebd99b7844420fcf49c95c4ee3ab234ca)。`.chrono-harness/distribution.json` 锁定清单、安装器摘要、长度和六个工具；生成的 Shell 入口验证这些字节，再调用 Rust 安装器。宿主不编译 Rust、不提交二进制、SDK 或缓存，也不需要 Python、sudo 或全局配置修改。
+本轮采用固定测试版 [v0.1.4-dev.43435181626.1.g7c20c55c12e26f31c1afefecbc75ef045dd70d6f](https://github.com/ChronoAIProject/chrono-harness/releases/tag/v0.1.4-dev.43435181626.1.g7c20c55c12e26f31c1afefecbc75ef045dd70d6f)。`.chrono-harness/distribution.json` 锁定清单、安装器摘要、长度和登记工具；生成的 Shell 入口验证这些字节，再调用 Rust 安装器。宿主不编译 Rust、不提交二进制、SDK 或缓存，也不需要 Python、sudo 或全局配置修改。
 
 从仓库根执行：
 
@@ -42,8 +42,8 @@ CI 来源为 `.chrono-harness/ci/github.json`，采用 `chrono-github-ci/v4`；�
 
 `.chrono-harness/worktree.json` 明确登记 remote、Git、原报告、本地输入和两种分支角色；通过已安装的 `chrono-worktree start` 从最新 dev 创建 feature 或 integration。源码与获取端的已提交政策须符合当前工作树合同；不手造 origin 回执。
 
-中断或部分效果按原 intent、报告、HEAD／index 和实际物理身份恢复，不从目录名、年龄、静默或缺失 PID 推断完成，也不删除未保全源码与提交。维护计划放在登记的 `.chrono-harness/state/` 中，继续使用固定发布的[工作树合同](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.4-dev.43368268229.1.geb40976ebd99b7844420fcf49c95c4ee3ab234ca/docs/worktree.md)。
+中断或部分效果按原 intent、报告、HEAD／index 和实际物理身份恢复，不从目录名、年龄、静默或缺失 PID 推断完成，也不删除未保全源码与提交。维护计划放在登记的 `.chrono-harness/state/` 中，继续使用固定发布的[工作树合同](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.4-dev.43435181626.1.g7c20c55c12e26f31c1afefecbc75ef045dd70d6f/docs/worktree.md)。
 
 ## 验收边界
 
-安装工具不启用完整治理，也不证明完整外部输入、跨平台同判或全部 SPEC。当前共享治理登记仍为 proposed。此次升级的实际范围以本仓 PR、dev 落地运行与安装原回执为准，不能凭本文宣称迁移完成。升级和失败恢复沿用本轮固定发布的[安装与升级合同](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.4-dev.43368268229.1.geb40976ebd99b7844420fcf49c95c4ee3ab234ca/docs/distribution.md)。
+安装工具不启用完整治理，也不证明完整外部输入、跨平台同判或全部 SPEC。当前共享治理登记仍为 proposed。此次升级的实际范围以本仓 PR、dev 落地运行与安装原回执为准，不能凭本文宣称迁移完成。升级和失败恢复沿用本轮固定发布的[安装与升级合同](https://github.com/ChronoAIProject/chrono-harness/blob/v0.1.4-dev.43435181626.1.g7c20c55c12e26f31c1afefecbc75ef045dd70d6f/docs/distribution.md)。
