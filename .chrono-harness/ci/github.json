@@ -36,7 +36,7 @@
         {
           "id": "initial-registration",
           "executable": ".chrono-harness/bin/chrono-judge-registration",
-          "sha256": "301a8e0b3f4881c719d6b380ae79096d30a06cd4d231a580a01f99812649f218",
+          "sha256": "28935ecb11d4047ecb46b7197a743c0a3acc562bed68e0e832b6647b443069cc",
           "argv": [
             "--protocol",
             "chrono-initial-judge/v1"
@@ -52,5 +52,38 @@
     }
   },
   "facts_config": ".chrono-harness/config.json",
-  "include_hidden_files": true
+  "include_hidden_files": true,
+  "persistent_cache": {
+    "schema": "chrono-github-cache/v1",
+    "restore_action": "actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830",
+    "save_action": "actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830",
+    "save_on_push_only": true,
+    "jobs": {},
+    "downloads": {
+      "schema": "chrono-github-downloads/v1",
+      "namespace": "release-tools",
+      "artifact_registry": ".chrono-harness/config.json",
+      "environment": {},
+      "entries": {
+        "tools": {
+          "owner": "repository",
+          "need": "复用固定 Release 的工具。",
+          "output_use": "原安装器校验大小、摘要和可执行权限，从固定 Release 补齐工具。",
+          "paths": [
+            ".chrono-harness/bin/"
+          ],
+          "compatibility_files": [
+            ".chrono-harness/distribution.json"
+          ],
+          "source_files": [
+            ".chrono-harness/install.sh"
+          ],
+          "consumers": [
+            "check"
+          ],
+          "save_job": "check"
+        }
+      }
+    }
+  }
 }
