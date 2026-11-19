@@ -34,6 +34,17 @@ jobs:
           ref: ${{ inputs.candidate || github.sha }}
           fetch-depth: 0
           persist-credentials: true
+      - name: Restore download cache tools
+        id: chrono_download_0
+        continue-on-error: true
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          key: "chrono-download-v1-release-tools-tools-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('.chrono-harness/distribution.json') }}-${{ hashFiles('.chrono-harness/install.sh') }}"
+          path: |
+            .chrono-harness/bin/
+          restore-keys: |
+            chrono-download-v1-release-tools-tools-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('.chrono-harness/distribution.json') }}-
+          fail-on-cache-miss: false
       - name: Bootstrap registered tools
         shell: bash
         run: |
@@ -53,3 +64,11 @@ jobs:
           path: ".chrono-harness/state/"
           if-no-files-found: error
           include-hidden-files: true
+      - name: Save download cache tools
+        if: ${{ github.event_name == 'push' && always() && !cancelled() && steps.chrono_download_0.outcome == 'success' && steps.chrono_download_0.outputs.cache-hit != 'true' }}
+        continue-on-error: true
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          key: "chrono-download-v1-release-tools-tools-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('.chrono-harness/distribution.json') }}-${{ hashFiles('.chrono-harness/install.sh') }}"
+          path: |
+            .chrono-harness/bin/
